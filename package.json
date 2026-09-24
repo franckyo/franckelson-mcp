@@ -1,0 +1,55 @@
+{
+  "name": "franckelson-mcp",
+  "version": "0.1.1",
+  "description": "A portfolio as an MCP server — ask Claude who I am, what I've built, what I charge, and whether I'm free. Fork it and edit one JSON file to make it yours.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "franckelson-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "profile.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "portfolio",
+    "resume",
+    "cv",
+    "freelance",
+    "hiring",
+    "claude",
+    "ai-agent",
+    "template"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "pretest": "npm run build",
+    "test": "node --test test/unit.test.mjs",
+    "prepublishOnly": "npm run build",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/node": "^22.0.0"
+  },
+  "author": "Franckelson Duvelson <franckelsond@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franckyo/franckelson-mcp.git"
+  },
+  "homepage": "https://github.com/franckyo/franckelson-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/franckyo/franckelson-mcp/issues"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "person": {
+    "name": "Franckelson Duvelson",
+    "headline": "MCP server developer — I connect AI assistants to real systems",
+    "location": "Tapachula, Chiapas, Mexico",
+    "timezone": "America/Mexico_City",
+    "remote": true,
+    "email": "franckelsond@gmail.com",
+    "github": "https://github.com/franckyo",
+    "npm": "https://www.npmjs.com/~franckyo",
+    "languages": [
+      { "language": "Haitian Creole", "level": "native" },
+      { "language": "English",        "level": "fluent" },
+      { "language": "French",         "level": "fluent" },
+      { "language": "Spanish",        "level": "fluent" }
+    ],
+    "summary": "I build Model Context Protocol servers that expose APIs, databases and internal tools to AI assistants as typed, tested tools. Before this I spent three years in high-volume technical support and data processing for US healthcare and telecom accounts, so I can run a discovery call and explain a technical tradeoff to someone who isn't an engineer. I also do security research — fuzzing and protocol analysis — which is mostly the habit of asking what a system wrongly trusts."
+  },
+
+  "skills": {
+    "core": ["Model Context Protocol (MCP)", "TypeScript", "Node.js", "Python", "API integration", "REST", "JSON-RPC"],
+    "security": ["libFuzzer", "AddressSanitizer", "protocol analysis", "reverse engineering", "EVM bytecode"],
+    "other": ["CRM and ticketing systems", "technical support", "multilingual interpretation"]
+  },
+
+  "projects": [
+    {
+      "id": "evm-recon-mcp",
+      "name": "evm-recon-mcp",
+      "type": "Published MCP server",
+      "status": "live on npm",
+      "install": "npx evm-recon-mcp",
+      "links": {
+        "npm": "https://www.npmjs.com/package/evm-recon-mcp",
+        "github": "https://github.com/franckyo/evm-recon-mcp"
+      },
+      "summary": "An MCP server that lets an AI assistant read deployed smart contracts: fetch bytecode, disassemble it, detect invalid jump targets, read storage slots, derive Solidity storage layouts and decode calldata. 14 EVM chains, no API key.",
+      "detail": "8 tools, 15 tests, CI on Node 18/20/22, read-only by design. The distinctive feature is static jump-target validation: a PUSH immediately followed by JUMP/JUMPI has a known target, so it can be checked against the JUMPDEST set, and an invalid one means the call halts exceptionally. It also skips PUSH immediate data correctly, so a 0x5b byte inside push data is not misread as a jump destination. Ships with a public post-release review documenting 8 defects I found in my own code and fixed across two follow-up releases.",
+      "why_it_matters": "Two of those 8 bugs returned confident wrong answers rather than failing loudly, which is the worst failure mode for an analysis tool. A third shipped a wrong version string past 15 passing tests and green CI, and was caught only by driving the published artifact through the real protocol. That is the standard I work to."
+    },
+    {
+      "id": "fuzzing-harnesses",
+      "name": "QUIC and TLS fuzzing harnesses",
+      "type": "Security research",
+      "status": "complete",
+      "summary": "Authored the first 10 libFuzzer harnesses for two widely deployed network-security libraries that shipped with none — 6 for a QUIC implementation, 4 for a TLS 1.3 implementation.",
+      "detail": "Coverage included the frame decoder, stream reassembly, a hand-written ring buffer, a buffer-implementation differential, the connection-ID and path-validation state machine, ACK processing, TLS handshake decoders, the record layer under attacker-chosen fragmentation, 18 typed extension decoders and ECH. Roughly 35M and 82M coverage-guided executions.",
+      "why_it_matters": "It surfaced a genuine remotely-reachable invariant break that I then proved non-exploitable by replaying the reproducer under a production build — and reported as hardening rather than a vulnerability. Knowing when not to file is most of the job."
+    },
+    {
+      "id": "assert-oracle",
+      "name": "Assert-oracle fuzzing detector",
+      "type": "Technique and tooling",
+      "status": "complete",
+      "summary": "A build technique that restores compiled-out assertions and makes them the fuzzing oracle, catching memory bugs AddressSanitizer is structurally blind to.",
+      "detail": "Built with -UNDEBUG and -D_GLIBCXX_ASSERTIONS. Demonstrated with a measured positive control: an out-of-range std::vector read that stays inside the heap allocation, which ASan passes clean with exit 0 and the detector aborts on.",
+      "why_it_matters": "On a hardened target the dominant failure mode is a dead oracle, not a missed bug. This makes the detector provable before you trust a negative result."
+    },
+    {
+      "id": "threshold-ecdsa",
+      "name": "Threshold-ECDSA key recovery",
+      "type": "Security research",
+      "status": "reported, under embargo",
+      "summary": "A state-machine defect in an MPC library leading to private-key recovery. Details withheld while the report is open.",
+      "detail": "Reproducible from upstream in one command using the project's own CI recipe, with the library source unmodified — only test cases appended. Includes a control arm running the project's own bundled assertion. Vendor and mechanism withheld while the report is open.",
+      "why_it_matters": "Evidence standard: every claim ships with a control arm proving the delta, and observed is labelled separately from inferred."
+    }
+  ],
+
+  "services": [
+    {
+      "id": "starter",
+      "name": "Starter MCP server",
+      "price_usd": 450,
+      "delivery_days": 4,
+      "includes": ["MCP server over one API", "up to 5 tools", "typed schemas and input validation", "tests", "README"]
+    },
+    {
+      "id": "standard",
+      "name": "Standard MCP server",
+      "price_usd": 1200,
+      "delivery_days": 10,
+      "includes": ["up to 12 tools", "OAuth or per-user auth", "rate limiting", "CI", "tests", "handover docs"]
+    },
+    {
+      "id": "audit",
+      "name": "MCP server audit",
+      "price_usd": 600,
+      "delivery_days": 3,
+      "includes": ["review of an existing MCP server", "written findings with reproductions", "patches for what I find"]
+    }
+  ],
+
+  "availability": {
+    "status": "available",
+    "hours_per_week": 30,
+    "earliest_start": "immediately",
+    "note": "Fixed-price preferred. Happy to scope on a 15-minute call.",
+    "contract_types": ["fixed-price project", "hourly contract", "short retainer"]
+  },
+
+  "contact": {
+    "preferred": "email",
+    "email": "franckelsond@gmail.com",
+    "github": "https://github.com/franckyo",
+    "response_time": "within 24 hours",
+    "call": "15-minute scoping call available on request"
+  }
+}

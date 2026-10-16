@@ -12,7 +12,7 @@ import { z } from "zod";
 
 interface Project { id: string; name: string; type: string; status: string; install?: string;
   links?: Record<string, string>; summary: string; detail: string; why_it_matters: string }
-interface Service { id: string; name: string; price_usd: number; delivery_days: number; includes: string[] }
+interface Service { id: string; name: string; price_usd?: number; delivery_days: number; includes: string[] }
 interface Profile {
   person: { name: string; headline: string; location: string; timezone: string; remote: boolean;
     github: string; languages: { language: string; level: string }[]; summary: string };
@@ -76,7 +76,7 @@ server.registerTool("get_services", {
   description: "What can be hired, at what fixed price, and how long it takes.",
   inputSchema: {}, annotations: ro,
 }, async () => text(profile.services.map(s =>
-  `${s.name} — $${s.price_usd} — ${s.delivery_days} days\n  ` + s.includes.map(i => `- ${i}`).join("\n  ")
+  `${s.name} — ${s.price_usd != null ? `$${s.price_usd}` : "quote on request"} — ${s.delivery_days} days\n  ` + s.includes.map(i => `- ${i}`).join("\n  ")
 ).join("\n\n")));
 
 server.registerTool("get_availability", {

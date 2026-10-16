@@ -1,6 +1,6 @@
 {
   "name": "franckelson-mcp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A portfolio as an MCP server — ask Claude who I am, what I've built, what I charge, and whether I'm free. Fork it and edit one JSON file to make it yours.",
   "license": "MIT",
   "type": "module",
@@ -36,14 +36,14 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@modelcontextprotocol/sdk": "^1.32.1",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "typescript": "^5.6.0",
-    "@types/node": "^22.0.0"
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
   },
-  "author": "Franckelson Duvelson <franckelsond@gmail.com>",
+  "author": "Franckelson Duvelson <hello@oarkit.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/franckyo/franckelson-mcp.git"

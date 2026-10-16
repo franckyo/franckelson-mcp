@@ -2,27 +2,55 @@
   "person": {
     "name": "Franckelson Duvelson",
     "headline": "MCP server developer — I connect AI assistants to real systems",
-    "location": "Tapachula, Chiapas, Mexico",
+    "location": "Mexico",
     "timezone": "America/Mexico_City",
     "remote": true,
-    "email": "franckelsond@gmail.com",
+    "email": "hello@oarkit.com",
     "github": "https://github.com/franckyo",
     "npm": "https://www.npmjs.com/~franckyo",
     "languages": [
-      { "language": "Haitian Creole", "level": "native" },
-      { "language": "English",        "level": "fluent" },
-      { "language": "French",         "level": "fluent" },
-      { "language": "Spanish",        "level": "fluent" }
+      {
+        "language": "Haitian Creole",
+        "level": "native"
+      },
+      {
+        "language": "English",
+        "level": "fluent"
+      },
+      {
+        "language": "French",
+        "level": "fluent"
+      },
+      {
+        "language": "Spanish",
+        "level": "fluent"
+      }
     ],
     "summary": "I build Model Context Protocol servers that expose APIs, databases and internal tools to AI assistants as typed, tested tools. Before this I spent three years in high-volume technical support and data processing for US healthcare and telecom accounts, so I can run a discovery call and explain a technical tradeoff to someone who isn't an engineer. I also do security research — fuzzing and protocol analysis — which is mostly the habit of asking what a system wrongly trusts."
   },
-
   "skills": {
-    "core": ["Model Context Protocol (MCP)", "TypeScript", "Node.js", "Python", "API integration", "REST", "JSON-RPC"],
-    "security": ["libFuzzer", "AddressSanitizer", "protocol analysis", "reverse engineering", "EVM bytecode"],
-    "other": ["CRM and ticketing systems", "technical support", "multilingual interpretation"]
+    "core": [
+      "Model Context Protocol (MCP)",
+      "TypeScript",
+      "Node.js",
+      "Python",
+      "API integration",
+      "REST",
+      "JSON-RPC"
+    ],
+    "security": [
+      "libFuzzer",
+      "AddressSanitizer",
+      "protocol analysis",
+      "reverse engineering",
+      "EVM bytecode"
+    ],
+    "other": [
+      "CRM and ticketing systems",
+      "technical support",
+      "multilingual interpretation"
+    ]
   },
-
   "projects": [
     {
       "id": "evm-recon-mcp",
@@ -66,44 +94,60 @@
       "why_it_matters": "Evidence standard: every claim ships with a control arm proving the delta, and observed is labelled separately from inferred."
     }
   ],
-
   "services": [
     {
       "id": "starter",
       "name": "Starter MCP server",
-      "price_usd": 450,
       "delivery_days": 4,
-      "includes": ["MCP server over one API", "up to 5 tools", "typed schemas and input validation", "tests", "README"]
+      "includes": [
+        "MCP server over one API",
+        "up to 5 tools",
+        "typed schemas and input validation",
+        "tests",
+        "README"
+      ]
     },
     {
       "id": "standard",
       "name": "Standard MCP server",
-      "price_usd": 1200,
       "delivery_days": 10,
-      "includes": ["up to 12 tools", "OAuth or per-user auth", "rate limiting", "CI", "tests", "handover docs"]
+      "includes": [
+        "up to 12 tools",
+        "OAuth or per-user auth",
+        "rate limiting",
+        "CI",
+        "tests",
+        "handover docs"
+      ]
     },
     {
       "id": "audit",
       "name": "MCP server audit",
-      "price_usd": 600,
       "delivery_days": 3,
-      "includes": ["review of an existing MCP server", "written findings with reproductions", "patches for what I find"]
+      "includes": [
+        "review of an existing MCP server",
+        "written findings with reproductions",
+        "patches for what I find"
+      ]
     }
   ],
-
   "availability": {
     "status": "available",
     "hours_per_week": 30,
     "earliest_start": "immediately",
-    "note": "Fixed-price preferred. Happy to scope on a 15-minute call.",
-    "contract_types": ["fixed-price project", "hourly contract", "short retainer"]
+    "note": "Fixed price agreed up front for every job; quote on request. Happy to scope on a 15-minute call.",
+    "contract_types": [
+      "fixed-price project",
+      "hourly contract",
+      "short retainer"
+    ]
   },
-
   "contact": {
     "preferred": "email",
-    "email": "franckelsond@gmail.com",
+    "email": "hello@oarkit.com",
     "github": "https://github.com/franckyo",
     "response_time": "within 24 hours",
-    "call": "15-minute scoping call available on request"
+    "call": "15-minute scoping call available on request",
+    "website": "https://oarkit.com"
   }
 }

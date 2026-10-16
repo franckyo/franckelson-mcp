@@ -76,7 +76,7 @@ test("unknown project id is an error that lists valid ids", async () => {
 
 test("get_services shows every price", async () => {
   const { text } = await call("get_services");
-  for (const s of profile.services) assert.match(text, new RegExp(`\\$${s.price_usd}`));
+  for (const s of profile.services) assert.match(text, s.price_usd != null ? new RegExp(`\\$${s.price_usd}`) : /quote on request/);
 });
 
 test("availability and contact render", async () => {

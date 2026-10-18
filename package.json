@@ -1,11 +1,11 @@
 {
-  "name": "franckelson-mcp",
-  "version": "0.1.2",
-  "description": "A portfolio as an MCP server — ask Claude who I am, what I've built, what I charge, and whether I'm free. Fork it and edit one JSON file to make it yours.",
+  "name": "oarkit-mcp",
+  "version": "0.2.0",
+  "description": "Oarkit's portfolio as an MCP server: ask Claude who we are, what we've built, what we charge, and whether we're free. Fork it and edit one JSON file to make it yours.",
   "license": "MIT",
   "type": "module",
   "bin": {
-    "franckelson-mcp": "dist/index.js"
+    "oarkit-mcp": "dist/index.js"
   },
   "files": [
     "dist",
@@ -46,10 +46,10 @@
   "author": "Franckelson Duvelson <hello@oarkit.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/franckyo/franckelson-mcp.git"
+    "url": "git+https://github.com/franckyo/oarkit-mcp.git"
   },
-  "homepage": "https://github.com/franckyo/franckelson-mcp#readme",
+  "homepage": "https://github.com/franckyo/oarkit-mcp#readme",
   "bugs": {
-    "url": "https://github.com/franckyo/franckelson-mcp/issues"
+    "url": "https://github.com/franckyo/oarkit-mcp/issues"
   }
 }

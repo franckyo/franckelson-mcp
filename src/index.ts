@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * franckelson-mcp — a portfolio served over the Model Context Protocol.
+ * oarkit-mcp — a portfolio served over the Model Context Protocol.
  * Every tool reads from profile.json. Fork this, edit that one file, and it is yours.
  */
 import { readFileSync } from "node:fs";
@@ -28,7 +28,7 @@ const readJson = (f: string) => JSON.parse(readFileSync(join(root, f), "utf8"));
 const pkg = readJson("package.json") as { version: string };
 const profile = readJson("profile.json") as Profile;
 
-const server = new McpServer({ name: "franckelson-mcp", version: pkg.version });
+const server = new McpServer({ name: "oarkit-mcp", version: pkg.version });
 const text = (s: string) => ({ content: [{ type: "text" as const, text: s }] });
 const ro = { readOnlyHint: true };
 
@@ -96,4 +96,4 @@ server.registerTool("get_contact", {
 }, async () => text(Object.entries(profile.contact).map(([k, v]) => `${k}: ${v}`).join("\n")));
 
 await server.connect(new StdioServerTransport());
-console.error(`franckelson-mcp ${pkg.version} running on stdio`);
+console.error(`oarkit-mcp ${pkg.version} running on stdio`);

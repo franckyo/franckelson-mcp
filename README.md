@@ -1,13 +1,15 @@
-# franckelson-mcp
+# oarkit-mcp
 
-[![npm](https://img.shields.io/npm/v/franckelson-mcp)](https://www.npmjs.com/package/franckelson-mcp)
-[![CI](https://github.com/franckyo/franckelson-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/franckyo/franckelson-mcp/actions/workflows/ci.yml)
+> Formerly published as `franckelson-mcp`. Same server, new name under the Oarkit brand.
+
+[![npm](https://img.shields.io/npm/v/oarkit-mcp)](https://www.npmjs.com/package/oarkit-mcp)
+[![CI](https://github.com/franckyo/oarkit-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/franckyo/oarkit-mcp/actions/workflows/ci.yml)
 
 **My portfolio, as an MCP server.** Install it and ask your AI assistant who I am, what I've
 built, what I charge, and whether I'm available.
 
 ```bash
-claude mcp add franckelson -- npx -y franckelson-mcp
+claude mcp add oarkit -- npx -y oarkit-mcp
 ```
 
 Then just ask:
@@ -35,7 +37,7 @@ All read-only. No network access, no credentials, nothing stored.
 
 **Claude Desktop** — add to `claude_desktop_config.json`:
 ```json
-{ "mcpServers": { "franckelson": { "command": "npx", "args": ["-y", "franckelson-mcp"] } } }
+{ "mcpServers": { "oarkit": { "command": "npx", "args": ["-y", "oarkit-mcp"] } } }
 ```
 
 ---
